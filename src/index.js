@@ -6,10 +6,8 @@ import App from './App';
 import PostsListTitles from "./features/posts/PostsListTitles";
 import SinglePostPage from "./features/posts/SinglePostPage";
 import AddPostForm from "./features/posts/AddPostForm"; 
-
-import Counter from "./features/counter/Counter";
-import Counter1 from "./features/counter1/Counter1";
 import EditPostForm from "./features/posts/EditPostForm";
+import { Link } from 'react-router-dom'
 import {
   BrowserRouter,
   Routes,
@@ -20,33 +18,23 @@ import AddUserForm from "./features/users/AddUserForm";
 const container = document.getElementById('root');
 const root = createRoot(container);
 
-
 root.render(
   <React.StrictMode>
     <Provider store={store}>
     <BrowserRouter>
     <Routes>
       <Route path="/" element={<App />}>
-
-      <Route
+        <Route
         index
         element={
           <>
-          <h1>Home</h1>
-            <p>Vivamus accumsan dui in facilisis aliquet.`,
-            `Etiam nec lectus urna. Sed sodales ultrices dapibus. 
-            Nam blandit tristique risus, eget accumsan nisl interdum eu. Aenean ac accumsan 
-            nisi. Nunc vel pulvinar diam. Nam eleifend egestas viverra. Donec finibus lectus 
-            sed lorem ultricies, eget ornare leo luctus. Morbi vehicula, nulla eu tempor 
-            interdum, nibh elit congue tellus, ac vulputate urna lorem nec nisi. Morbi id 
-            consequat quam.</p>
+          <h1>Admin</h1>
+            <p><Link to="/posts">Posts</Link> | {" "}
+        <Link to="/users">Users</Link> | {" "}</p>
           </>
         }
       />
-      
         <Route path="posts" element={<PostsListTitles />}>
-        
-        
         <Route
         index
         element={
@@ -94,17 +82,10 @@ root.render(
         }
         />
         </Route>
-        <Route path="users" element={<AddUserForm />} />
-        <Route path="counter" element={<Counter />} />
-        <Route path="counter1" element={<Counter1 />} />
-        <Route path="counter1" element={<Counter1 />} />
-        
-        
-        
-</Route> 
-
-    </Routes>
-  </BrowserRouter>
-    </Provider>
-  </React.StrictMode>
+        <Route path="users" element={<AddUserForm />} />    
+    </Route> 
+  </Routes>
+</BrowserRouter>
+  </Provider>
+</React.StrictMode>
 );

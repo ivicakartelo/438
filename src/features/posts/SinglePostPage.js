@@ -37,11 +37,6 @@ export default function SinglePostPage() {
         <TimeAgo timestamp={post.date} />
         <p>{post.content}</p>
         <ReactionButtons post={post} />
-        <Link to={`/editPost/${post.id}`}>
-          Edit Post
-        </Link>
-        
-        
         <AddCommentForm postId={post.id} />
         <CommentsList post={post.id} />
       </article>

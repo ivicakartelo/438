@@ -25,10 +25,7 @@ const posts = useSelector(state => state.posts)
       <TimeAgo timestamp={post.date} />
       <p>{post.content.substring(0, 100)}</p>
       <ReactionButtons post={post} />
-      <Link to={`/posts/${post.id}`}>
-        View post
-      </Link>
-      <button onClick={()=>postRemove(post.id)}>Delete</button>
+      
     </article>
   ))
 

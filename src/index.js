@@ -30,7 +30,7 @@ root.render(
           <>
           <h1>Admin</h1>
             <p><Link to="/posts">Posts</Link> | {" "}
-        <Link to="/users">Users</Link> | {" "}</p>
+            <Link to="/users">Users</Link> | {" "}</p>
           </>
         }
       />
@@ -39,7 +39,14 @@ root.render(
         index
         element={
           <main style={{ padding: '1rem' }}>
-          <h1>Post</h1>
+          <h1>Post Terms of use</h1>
+            <p>Vivamus accumsan dui in facilisis aliquet.`,
+            `Etiam nec lectus urna. Sed sodales ultrices dapibus. 
+            Nam blandit tristique risus, eget accumsan nisl interdum eu. Aenean ac accumsan 
+            nisi. Nunc vel pulvinar diam. Nam eleifend egestas viverra. Donec finibus lectus 
+            sed lorem ultricies, eget ornare leo luctus. Morbi vehicula, nulla eu tempor 
+            interdum, nibh elit congue tellus, ac vulputate urna lorem nec nisi. Morbi id 
+            consequat quam.</p>
             <p>Vivamus accumsan dui in facilisis aliquet.`,
             `Etiam nec lectus urna. Sed sodales ultrices dapibus. 
             Nam blandit tristique risus, eget accumsan nisl interdum eu. Aenean ac accumsan 
@@ -65,23 +72,7 @@ root.render(
         </main>
       }
     />
-<Route path="addpost" element={<AddPostForm />}>
-<Route
-        index
-        element={
-          <main style={{ padding: '1rem' }}>
-          <h1>Post</h1>
-            <p>Vivamus accumsan dui in facilisis aliquet.`,
-            `Etiam nec lectus urna. Sed sodales ultrices dapibus. 
-            Nam blandit tristique risus, eget accumsan nisl interdum eu. Aenean ac accumsan 
-            nisi. Nunc vel pulvinar diam. Nam eleifend egestas viverra. Donec finibus lectus 
-            sed lorem ultricies, eget ornare leo luctus. Morbi vehicula, nulla eu tempor 
-            interdum, nibh elit congue tellus, ac vulputate urna lorem nec nisi. Morbi id 
-            consequat quam.</p>
-          </main>
-        }
-        />
-        </Route>
+<Route path="addpost" element={<AddPostForm />}></Route>
         <Route path="users" element={<AddUserForm />} />    
     </Route> 
   </Routes>

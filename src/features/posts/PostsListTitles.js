@@ -28,7 +28,8 @@ return (
   <div style={{ display: 'flex' }}>
     <Link to="/addpost">Create</Link>{" "}<br />
       <nav style={{ borderRight: 'solid 1px', padding: '1rem' }}>
-    <h2>Posts</h2>
+      <Link to="/posts">Posts</Link><br />
+    
     {renderedPosts}
     
   </nav>

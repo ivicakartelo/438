@@ -23,6 +23,10 @@ const posts = useSelector(state => state.posts)
       <Link to={`/posts/${post.id}`}>
       <h3>{post.title}</h3>
       </Link>
+
+      <Link to={`/editPost/${post.id}`}>
+      <h3>Edit</h3>
+      </Link>
       
       
       

@@ -5,10 +5,11 @@ import { store } from './app/store';
 import App from './App';
 import PostsListTitles from "./features/posts/PostsListTitles";
 import SinglePostPage from "./features/posts/SinglePostPage";
-import AddPostForm from "./features/posts/AddPostForm";
+import AddPostForm from "./features/posts/AddPostForm"; 
 
 import Counter from "./features/counter/Counter";
 import Counter1 from "./features/counter1/Counter1";
+import EditPostForm from "./features/posts/EditPostForm";
 import {
   BrowserRouter,
   Routes,
@@ -61,9 +62,12 @@ root.render(
           </main>
         }
         />
-        <Route path=":postId" element={<SinglePostPage />} />
-              
-      </Route>
+        <Route path=":postId" element={<SinglePostPage />}/>
+        </Route>
+        
+        <Route path="editPost/:postId" element={<EditPostForm />} />
+             
+      
 
       <Route
       path="*"
@@ -93,6 +97,9 @@ root.render(
         <Route path="users" element={<AddUserForm />} />
         <Route path="counter" element={<Counter />} />
         <Route path="counter1" element={<Counter1 />} />
+        <Route path="counter1" element={<Counter1 />} />
+        
+        
         
 </Route> 
 

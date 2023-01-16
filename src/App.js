@@ -11,6 +11,7 @@ export default function App() {
         <Link to="/users">Add Users</Link> | {" "}
         <Link to="/counter">Counter</Link> | {" "}
         <Link to="/counter1">Counter1</Link> | {" "}
+        
       </nav>
       <Outlet />  
     </>

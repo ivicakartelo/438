@@ -5,7 +5,8 @@ import { store } from './app/store';
 import App from './App';
 import PostsListTitles from "./features/posts/PostsListTitles";
 import SinglePostPage from "./features/posts/SinglePostPage";
-import AddPostForm from "./features/posts/AddPostForm"; 
+import AddPostForm from "./features/posts/AddPostForm";
+import AddPostForm1 from "./features/posts/AddPostForm1";
 import EditPostForm from "./features/posts/EditPostForm";
 import { Link } from 'react-router-dom'
 import {
@@ -73,7 +74,10 @@ root.render(
       }
     />
 <Route path="addpost" element={<AddPostForm />}></Route>
-        <Route path="users" element={<AddUserForm />} />    
+<Route path="users" element={<AddUserForm />} />
+<Route path="home" element={<AddPostForm1 />} />
+<Route path="post/:postId" element={<SinglePostPage />} />
+
     </Route> 
   </Routes>
 </BrowserRouter>

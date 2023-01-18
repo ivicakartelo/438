@@ -26,7 +26,7 @@ export default function EditPostForm() {
   const onSavePostClicked = () => {
     if (title && content) {
       dispatch(postUpdated({ id: postId, title, content }))
-      navigate(`/posts`)
+      navigate(`/addPost`)
     }
   }
 

@@ -15,23 +15,48 @@ const posts = useSelector(state => state.posts)
       dispatch(postDelete({ id }));
     }
 
+    
   const renderedPosts = orderedPosts.map(post => (
-    <article key={post.id}>
-      <h3>{post.title}</h3>
-      <Link to={`/posts/${post.id}`}>Read</Link>{" "}<br />
-      <Link to={`/editPost/${post.id}`}>Update</Link>{" "}<br />
-      <Link onClick={()=>postRemove(post.id)}>Delete</Link>{" "}
-    </article>
+    
+    
+    
+    <>
+  <tr key={post.id}>
+    <td>{post.id}</td>
+    <td>{post.title}</td>
+    <td>{post.content}</td>
+    <td>{post.user}</td>
+    <td>{post.date}</td>
+    <td><Link to={`/posts/${post.id}`}>Read</Link></td>
+    <td><Link to={`/editPost/${post.id}`}>Update</Link></td>
+    <td><Link onClick={()=>postRemove(post.id)}>Delete</Link></td>
+  </tr>
+  
+    </>
+
   ))
 
 return (
-  <div style={{ display: 'flex' }}>
-    <Link to="/addpost">Create</Link>{" "}<br />
-      <nav style={{ borderRight: 'solid 1px', padding: '1rem' }}>
+  <>
+    <Link to="/addpost">Create post</Link>{" "}<br />
+      
       <Link to="/posts">Posts</Link><br />
+      <table>
+      <tbody>
+  <tr>
+    <th>id</th>
+    <th>title</th>
+    <th>content</th>
+    <th>user</th>
+    <th>date</th>
+    <th>read</th>
+    <th>update</th>
+    <th>delete</th>
+  </tr>     
         {renderedPosts}
-      </nav>
+        </tbody>
+        </table>  
   <Outlet />
-  </div>
+  </>
 )
 }

@@ -35,7 +35,7 @@ import { UsersList } from './UsersList'
             Save User
         </button>
       </form>
-      <UsersList />
+      
     </section>
   )
 }

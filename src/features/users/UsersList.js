@@ -1,17 +1,33 @@
 import { useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
 
-export const UsersList = () => {
+export default function UsersList() {
   const users = useSelector(state => state.users)
   .map(user => (
-    <article key={user.id}>
-      <h3>{user.username}</h3>
-    </article>
+    <>
+      <tr key={user.id}>
+        <td>{user.username}</td>
+        <td>Read</td>
+        <td>Update</td>
+        <td>Delete</td>
+      </tr>
+    </>
   ))
 
 return (
   <section>
-    <h2>Users</h2>
-    {users}    
+    <Link to='/adduser'>Create user</Link>
+    <h4>Users</h4>
+    <table>
+      <tr>
+        <th>username</th>
+        <th>read</th>
+        <th>update</th>
+        <th>delete</th>
+      </tr>
+    
+    {users} 
+    </table>   
   </section>
 )
 }

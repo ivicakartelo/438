@@ -32,16 +32,8 @@ import { useLocation, NavLink, Outlet, useSearchParams } from "react-router-dom"
       {user.username}
     </option>
   ))
-
   return (
-    
-    
     <section>
-
-<div style={{ display: 'flex' }}>
-      <nav style={{ borderRight: 'solid 1px', padding: '1rem' }}>
-      
-
       <h2>Add a New Post</h2>
       <form>
         <label htmlFor="postTitle">Post Title:</label>
@@ -67,14 +59,6 @@ import { useLocation, NavLink, Outlet, useSearchParams } from "react-router-dom"
             Save Post
         </button>
       </form>
-      
-      </nav>
-      <div style={{ display: 'flex' }}>
-        <PostsList1 />
-      </div>
-      </div>
-      
-      
-    </section>
+   </section>
   )
 }

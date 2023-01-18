@@ -20,7 +20,7 @@ const posts = useSelector(state => state.posts)
 
   const renderedPosts = orderedPosts.map(post => (
     <article key={post.id}>
-      <h3>{post.title}</h3>
+      <h4>{post.title}</h4>
       <PostAuthor userId={post.user} />
       <TimeAgo timestamp={post.date} />
       <p>{post.content.substring(0, 700)}</p>
@@ -32,7 +32,7 @@ const posts = useSelector(state => state.posts)
 
 return (
   <div>
-    <h2>Posts</h2>
+    <h4>Posts</h4>
     {renderedPosts}
   </div>
 )

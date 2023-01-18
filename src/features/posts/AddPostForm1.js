@@ -40,8 +40,8 @@ import { useLocation, NavLink, Outlet, useSearchParams } from "react-router-dom"
 
 
       
-
-      <h2>Add a New Post</h2>
+<h1>Home</h1>
+      <h4>Add a New Post</h4>
       <form>
         <label htmlFor="postTitle">Post Title:</label>
         <input

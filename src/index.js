@@ -15,6 +15,7 @@ import {
   Route,
 } from "react-router-dom";
 import AddUserForm from "./features/users/AddUserForm";
+import UsersList from "./features/users/UsersList";
 
 const container = document.getElementById('root');
 const root = createRoot(container);
@@ -30,53 +31,32 @@ root.render(
         element={
           <>
           <h1>Admin</h1>
-            <p><Link to="/posts">Posts</Link> | {" "}
-            <Link to="/users">Users</Link> | {" "}</p>
+            <Link to="/posts">Posts</Link> | {" "}
+            <Link to="/users">Users</Link> | {" "}
+            <Link to="/comments">Comments</Link> | {" "}
+            <Link to="/Replies">Replies</Link> | {" "}
+            <Link to="/replies1">replies1</Link> | {" "}
           </>
         }
       />
         <Route path="posts" element={<PostsListTitles />}>
-        <Route
-        index
-        element={
-          <main style={{ padding: '1rem' }}>
-          <h1>Post Terms of use</h1>
-            <p>Vivamus accumsan dui in facilisis aliquet.`,
-            `Etiam nec lectus urna. Sed sodales ultrices dapibus. 
-            Nam blandit tristique risus, eget accumsan nisl interdum eu. Aenean ac accumsan 
-            nisi. Nunc vel pulvinar diam. Nam eleifend egestas viverra. Donec finibus lectus 
-            sed lorem ultricies, eget ornare leo luctus. Morbi vehicula, nulla eu tempor 
-            interdum, nibh elit congue tellus, ac vulputate urna lorem nec nisi. Morbi id 
-            consequat quam.</p>
-            <p>Vivamus accumsan dui in facilisis aliquet.`,
-            `Etiam nec lectus urna. Sed sodales ultrices dapibus. 
-            Nam blandit tristique risus, eget accumsan nisl interdum eu. Aenean ac accumsan 
-            nisi. Nunc vel pulvinar diam. Nam eleifend egestas viverra. Donec finibus lectus 
-            sed lorem ultricies, eget ornare leo luctus. Morbi vehicula, nulla eu tempor 
-            interdum, nibh elit congue tellus, ac vulputate urna lorem nec nisi. Morbi id 
-            consequat quam.</p>
-          </main>
-        }
-        />
+        
         <Route path=":postId" element={<SinglePostPage />}/>
         </Route>
-        
         <Route path="editPost/:postId" element={<EditPostForm />} />
-             
-      
-
-      <Route
-      path="*"
-      element={
+        <Route
+        path="*"
+        element={
         <main style={{ padding: "1rem" }}>
           <p>There's nothing here!</p>
         </main>
       }
     />
-<Route path="addpost" element={<AddPostForm />}></Route>
-<Route path="users" element={<AddUserForm />} />
-<Route path="home" element={<AddPostForm1 />} />
-<Route path="post/:postId" element={<SinglePostPage />} />
+        <Route path="addpost" element={<AddPostForm />}></Route>
+        <Route path="users" element={<UsersList />} />
+        <Route path="adduser" element={<AddUserForm />} />
+        <Route path="home" element={<AddPostForm1 />} />
+        <Route path="post/:postId" element={<SinglePostPage />} />
 
     </Route> 
   </Routes>

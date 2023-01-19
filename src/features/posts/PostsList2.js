@@ -26,8 +26,8 @@ const posts = useSelector(state => state.posts)
       <p>{post.content.substring(0, 700)}</p>
       <ReactionButtons post={post} />
       <Link to={`/post/${post.id}`}>Read</Link>{" "}
-      
     </article>
+
   ))
 
 return (

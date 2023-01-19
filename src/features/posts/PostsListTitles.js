@@ -1,4 +1,3 @@
-import { useLocation, NavLink, Outlet, useSearchParams } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { postDelete } from './postsSlice'
@@ -17,9 +16,6 @@ const posts = useSelector(state => state.posts)
 
     
   const renderedPosts = orderedPosts.map(post => (
-    
-    
-    
     <>
   <tr key={post.id}>
     <td>{post.id}</td>
@@ -38,12 +34,17 @@ const posts = useSelector(state => state.posts)
 
 return (
   <>
-    <Link to="/addpost">Create post</Link>{" "}<br />
-      
-      <Link to="/posts">Posts</Link><br />
-      <table>
-      <tbody>
-  <tr>
+  <h1>Admin</h1>
+    <Link to="/posts">Posts</Link> | {" "}
+    <Link to="/users">Users</Link> | {" "}
+    <Link to="/comments">Comments</Link> | {" "}
+    <Link to="/Replies">Replies</Link> | {" "}
+    <Link to="/replies1">replies1</Link> | {" "}<br />
+    <Link to="/addpost">Create post</Link>{" "}
+
+  <table className="table table-striped">
+    <thead>
+    <tr>
     <th>id</th>
     <th>title</th>
     <th>content</th>
@@ -52,11 +53,12 @@ return (
     <th>read</th>
     <th>update</th>
     <th>delete</th>
-  </tr>     
-        {renderedPosts}
-        </tbody>
-        </table>  
-  <Outlet />
+    </tr>
+    </thead>
+    <tbody>
+      {renderedPosts}
+    </tbody>
+  </table>             
   </>
 )
 }

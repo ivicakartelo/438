@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { useDispatch,  useSelector } from 'react-redux'
 import { postAdded } from './postsSlice'
-import PostsList2 from "./PostsList2";
-import { useLocation, NavLink, Outlet, useSearchParams } from "react-router-dom";
+import PostsList2 from "./PostsList2"
+import { FormGroup, Input, Button } from 'reactstrap'
 
   export default function AddPostForm() {
   const [title, setTitle] = useState('')
@@ -34,39 +34,39 @@ import { useLocation, NavLink, Outlet, useSearchParams } from "react-router-dom"
   ))
 
   return (
-    
-    
-    <section>
-
-
-      
-<h1>Home</h1>
+    <section className="container">
+      <h1>Home</h1>
       <h4>Add a New Post</h4>
       <form>
+        <FormGroup>
         <label htmlFor="postTitle">Post Title:</label>
-        <input
+        
+          <Input
           type="text"
           placeholder="What's on your mind?"
           value={title}
           onChange={onTitleChanged}
         />
-
-        <label htmlFor="postAuthor">Author:</label>
-        
-        <select id="postAuthor" value={userId} onChange={onAuthorChanged}>
+        </FormGroup>
+        <FormGroup>
+          <label htmlFor="postAuthor">Author:</label>
+          <Input type="select" value={userId} onChange={onAuthorChanged}>
           <option value=""></option>
           {usersOptions}         
-        </select>
-        
-        <label htmlFor="postContent">Content:</label>
-        <textarea
+        </Input>
+        </FormGroup>
+        <FormGroup>
+          <label htmlFor="postContent">Content:</label>
+        <Input
         placeholder="What's on your mind?"
           value={content}
           onChange={onContentChanged}
         />
-        <button type="button" onClick={onSavePostClicked} disabled={!canSave}>
+        </FormGroup>
+        <Button type="button" onClick={onSavePostClicked} disabled={!canSave}>
             Save Post
-        </button>
+        </Button>
+        
       </form>
         <PostsList2 />
     </section>

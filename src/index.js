@@ -14,8 +14,11 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-import AddUserForm from "./features/users/AddUserForm";
-import UsersList from "./features/users/UsersList";
+import AddUserForm from "./features/users/AddUserForm"
+import UsersList from "./features/users/UsersList"
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'font-awesome/css/font-awesome.css'
+import 'bootstrap-social/bootstrap-social.css'
 
 const container = document.getElementById('root');
 const root = createRoot(container);
